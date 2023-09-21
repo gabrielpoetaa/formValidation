@@ -37,10 +37,8 @@ app.post('/index', urlencodedParser, [
     }
 })
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
 app.listen(port, () => console.info(`App listening on port: ${port}`))
