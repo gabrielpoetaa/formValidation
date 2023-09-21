@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const { check, validationResult } = require('express-validator')
 
 const app = express()
-const port = 5000
+// const port = 5000
 
 // Set Templating Enginge
 app.set('view engine', 'ejs')
@@ -36,5 +36,11 @@ app.post('/index', urlencodedParser, [
         })
     }
 })
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 app.listen(port, () => console.info(`App listening on port: ${port}`))
