@@ -37,6 +37,10 @@ app.post('/index', urlencodedParser, [
     }
 })
 
-app.listen(process.env.PORT);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 // app.listen(port, () => console.info(`App listening on port: ${port}`))
