@@ -43,4 +43,4 @@ if (port == null || port == "") {
 }
 app.listen(port);
 
-// app.listen(port, () => console.info(`App listening on port: ${port}`))
+app.listen(port, () => console.info(`App listening on port: ${port}`))
