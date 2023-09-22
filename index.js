@@ -6,7 +6,9 @@ const app = express()
 // const port = 5000
 
 // Set Templating Enginge
-app.set('view engine', 'ejs')
+app.set('view engine','ejs'); 
+
+app.engine('ejs', require('ejs').__express);
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -43,4 +45,4 @@ if (port == null || port == "") {
 }
 app.listen(port);
 
-app.listen(port, () => console.info(`App listening on port: ${port}`))
+// app.listen(port, () => console.info(`App listening on port: ${port}`))
